@@ -1,0 +1,282 @@
+
+$color_gray: #445162;
+$width_container: 1250px;
+$padding_container: 50px;
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: rgb(155, 153, 153);
+}
+ul, li {
+    list-style-type: none;
+    line-height: 2.5em;
+    padding: 0;
+    margin: 0;
+}
+ol {
+    line-height: 2.5em;
+    padding: 0;
+    margin: 0;
+}
+p {
+    line-height: 1.5em;
+}
+.container {
+    max-width: $width_container;
+    margin: 0 auto;
+    padding: $padding_container;
+}
+.background {
+    background-color: $color_gray;
+    color: #fff;
+}
+h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+.header {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 30px;
+    font-weight: 500;
+    color: $color_gray;
+}
+.header_width {
+    width: $width_container;
+}
+figure {
+    margin: 5px 0;
+    display: flex;
+    max-width: ($width_container - $padding_container*2)/2 - 20px - 60px; // пока делала вторую часть страницы где-то накосячила и после этого в формулу пришлось добавить вычетание 60px потому что блоки не выстраивались в две колонки
+    align-items: center;
+}
+figcaption {
+    padding-left: 15px;
+}
+
+.product {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    h1 {
+        padding-bottom: 0.5em;
+        font-size: 50px;
+        max-width: $width_container/2;
+        font-weight: 500;
+
+    }
+    .product__list {
+        line-height: 20px;
+        max-width: $width_container/2;
+    }
+    .product__list_item {
+        font-size: 20px;
+    }
+    .product__list_item::before {
+        content: '\2714 \00A0 \00A0';
+    }
+    .product__img { // не понимаю почему в версии для телефонов ширина родительского блока (с фоном) не ключает в себя ширину изображения 
+    }
+}
+
+
+.about {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    .header {
+        max-width: $width_container/2;
+        text-align: start;
+    }
+    .about__text {
+        max-width: $width_container/2;
+        //max-width: 655px; // не знаю как высчитывать ширину так, чтобы она была как в макете
+    }
+    .about__img {
+    
+    }
+}
+
+
+.dignity {
+    background-color: #f5f5f5;
+    .dignity__list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;}
+        margin-top: 2em;
+    .dignity__list_item {
+        max-width: $width_container/2;
+        flex-basis: 50%;
+        margin: 0 0 1em 0;
+        line-height: 1.2em;
+    }
+}
+
+
+.screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .screenshot {
+    }
+    .screenshots__header {
+        font-size: 24px;
+    }
+    .screenshots__text {
+    }
+}
+
+
+.reviews {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .reviews__text {
+        max-width: ($width_container - $padding_container*2) / 2 - 70px - 30px*2 - 45px; // тут пришлось дополнительно вычесть 45px
+    }
+    img {
+        border: 0px solid;
+        border-radius: 50%;
+        margin-right: 30px; 
+        //padding-right: 30px; //почему нельзя использовать padding? (меняется форма изображения с круга на что-то вроде треугольника)
+    }
+}
+
+
+.buy {
+    .header_small_width {
+        width: auto;
+    }
+    .buy_cards {
+        margin: 0 auto;
+        max-width: 1000px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .buy_card {
+            width: 1000px/3 - 40px;
+            border: 1px solid $color_gray;
+            border-radius: 2%;
+            display: flex; 
+            flex-direction: column;
+            padding-bottom: 20px;
+            
+            .buy_card__header {
+                font-size: 24px;
+                padding: 20px;
+                text-align: center;
+            }
+            .dollar {
+                background-color: #fff;
+                display: block;
+                justify-content: center;
+                padding: 5px;
+                color: $color_gray;
+                align-self: center;
+                text-align: center;
+                font-size: 30px;
+                width: 100%;
+            }
+            .buy_card__list {
+                margin: 20px;
+            }
+            .buy__item {
+                font-size: 14px;
+                line-height: 1.7em;
+            }
+            button {
+                padding: 2% 5%;
+                border: 0px solid;
+                border-radius: 10%;
+                text-transform: uppercase;
+                padding: 5% 40%;
+                align-self: center;
+                background: #fff;
+            }
+            
+        }
+    }
+}
+
+
+.footer {
+    margin-top: 100px;
+    .footer_colomns {
+    display: flex;
+    justify-content: center;
+    }
+    .footer__header {
+        color: #fff;
+    }
+    .footer__form {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+    }
+    .input {
+        display: inline-block;
+        border: 0px solid;
+        border-radius: 3%;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-family: sans-serif;
+        min-width: 500px; // не знаю как лучше задать ширину полям ввода
+    }
+    .footer__form_button {
+        align-items: center; // не понимаю почему кнопка продолжает растягиваться по ширине
+        text-transform: uppercase;
+        color: $color_gray;
+    }
+    .footer__list {
+    }
+    a {
+        letter-spacing: 1.5px; 
+        color: #fff;
+    }
+    .footer__messenge {
+    }
+
+}
+
+
+.copyrit {
+    text-align: center;
+    color: $color_gray;
+}
+
+
+
+
+
+@media (max-width: 425px) {
+    * {
+    display: block; // пыталась отменить влияние флекс боксов для телефонной версии
+    }
+    a {
+        display: inline;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+
+.contacts-icon { 
+    
+   }
