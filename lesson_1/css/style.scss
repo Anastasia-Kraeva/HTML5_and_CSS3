@@ -1,0 +1,7 @@
+$dollar: "$";
+span.dollar:before {
+    content: $dollar; 
+    content: "$";
+    /*оба варианта работают*/
+}
+
