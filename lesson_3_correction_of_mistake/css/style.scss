@@ -1,0 +1,453 @@
+
+$color_gray: #445162;
+$width_container: 1250px;
+$padding_container: 50px;
+$width_container_tel: 100vw;
+
+// ::before ::after {
+//     // content: '';
+// }
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: rgb(155, 153, 153);
+}
+ul, li {
+    list-style-type: none;
+    line-height: 2.5em;
+    padding: 0;
+    margin: 0;
+}
+ol {
+    line-height: 2.5em;
+    padding: 0;
+    margin: 0;
+}
+p {
+    line-height: 1.5em;
+}
+.container {
+    max-width: $width_container;
+    margin: 0 auto; //перестал корректно работать 
+    padding: $padding_container;
+}
+.background {
+    background-color: $color_gray;
+    color: #fff;
+}
+.background_border{
+    border: 2px solid #000;
+}
+h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+.header {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 30px;
+    font-weight: 500;
+    color: $color_gray;
+}
+.header_width {
+    width: $width_container_tel;
+}
+figure {
+    margin: 5px 0;
+    display: flex;
+    max-width: $width_container/2; //убрала вычетание паддингов, по началу все работало.. я снова в тупике
+    align-items: center;
+}
+figcaption {
+    padding-left: 15px;
+}
+
+.product {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    h1 {
+        padding-bottom: 0.5em;
+        font-size: 50px;
+        max-width: $width_container/2;
+        font-weight: 500;
+
+    }
+    .product__list {
+        line-height: 20px;
+        max-width: $width_container/2;
+    }
+    .product__list_item {
+        font-size: 20px;
+    }
+    .product__list_item::before {
+        content: "";
+        background-image: url(../img/check_icon.png);
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        margin-right: 10px; 
+        
+    }
+    iframe {
+        width: 450px;
+    }
+}
+
+
+.about {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    .header {
+        max-width: $width_container/2;
+        text-align: start;
+    }
+    .about__text {
+        max-width: $width_container/2;
+    }
+    .about__img {
+    width: 450px;
+    height: 250px;
+    }
+}
+
+
+.dignity {
+    background-color: #f5f5f5;
+    .dignity__list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;}
+        margin-top: 2em;
+    .dignity__list_item {
+        display: flex;
+        max-width: $width_container/2;
+        flex-basis: 50%;
+        margin-bottom: 10px;
+        line-height: 1.2em;
+    }
+    .dignity__list_item::before {
+        content: '+';
+        display: inline-block;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        background-color: $color_gray;
+        width: 30px;
+        padding: 5px;
+        padding-bottom: 4px;
+        margin: auto 15px;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+}
+
+
+.screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // .screenshot {
+    // }
+    .screenshots__header {
+        font-size: 24px;
+    }
+    // .screenshots__text {
+    // }
+}
+
+
+.reviews {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        max-width: $width_container/ 2; 
+
+    }
+    div {
+        background: #ebebeb;
+        border: 0px solid;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        margin-left: 30px;
+    }
+    div::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-right: 15px solid #ebebeb;
+        position: absolute;
+        top: 30px;
+        left:-30px;
+    }
+    img {
+        border: 0px solid;
+        border-radius: 50%;
+        margin-right: 30px; 
+        box-sizing: border-box;
+    }
+}
+
+
+.buy {
+    .header_small_width {
+        width: auto;
+    }
+    .buy_cards {
+        margin: 0 auto;
+        max-width: 1000px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .buy_card {
+            width: 1000px/3 - 40px;
+            border: 1px solid $color_gray;
+            border-radius: 2%;
+            display: flex; 
+            flex-direction: column;
+            padding-bottom: 20px;
+            
+            .buy_card__header {
+                font-size: 24px;
+                padding: 20px;
+                text-align: center;
+            }
+            .dollar {
+                background-color: #fff;
+                display: block;
+                justify-content: center;
+                padding: 5px;
+                color: $color_gray;
+                align-self: center;
+                text-align: center;
+                font-size: 30px;
+                width: 100%;
+            }
+            .buy_card__list {
+                margin: 20px;
+            }
+            .buy__item {
+                font-size: 14px;
+                line-height: 1.7em;
+            }
+            button {
+                padding: 2% 5%;
+                border: 0px solid;
+                border-radius: 10%;
+                text-transform: uppercase;
+                padding: 5% 40%;
+                align-self: center;
+                background: #fff;
+                font-weight: 700;
+            }
+            
+        }
+    }
+}
+
+
+.footer {
+    margin-top: 100px;
+    ::before {
+        vertical-align: middle;
+    }
+    .footer_colomns {
+    display: flex;
+    justify-content: center;
+    }
+    .footer__header {
+        color: #fff;
+    }
+    .footer__form {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        align-items: center;
+    }
+    .input {
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-family: sans-serif;
+        min-width: 500px; 
+    }
+    .input:hover {
+        border: 2px solid #999;
+    }
+    .input:focus {
+        background: rgb(252, 247, 227);
+    }
+    textarea {
+        max-width: 500px;
+        min-height: 40px;
+    }
+    .footer__form_button {
+        text-transform: uppercase;
+        color: #fff;
+        padding: 10px 50px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        background-color: $color_gray;
+    }
+    .footer__form_button:hover {
+        color: $color_gray;
+        background-color: #fff;
+        border-color:#0f294d;
+    }
+    .footer__form_button:focus {
+        background-color: #ddd;
+
+    }
+    a {
+        color: #fff;
+    }
+    .fab, .fas {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    .fab:hover, .fas:hover {
+        color: rgb(108, 183, 212);
+    }
+    // .footer__list li::before {
+    //     content: "@"; // когда оставляю содержание пустым, то фон не отображается (все иконки скачала, установлю индивидуальные иконки к следующему уроку)
+    //     background-image: url(../img/skype_icon.png);
+    //     display: inline-block;
+    //     width: 30px;
+    //     // margin: auto 15px;
+    //     vertical-align: middle;
+    //     display: inline-block;
+    //     background-repeat: no-repeat;
+    //     background-size: contain;
+    //     background-position: center center;
+    //     margin-right: 15px;
+    // }
+    .footer__messenge {
+        margin-top: 20px;
+    }
+}
+.icon_hard {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    color: $color_gray;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: Franklin Gothic Medium;
+    text-align: center;
+    vertical-align: middle;//?
+
+    .fab, .fas {
+        color: $color_gray;
+        display: inline-block;
+    }
+    .fab:hover, .fas:hover {
+    color: $color_gray;
+    }
+
+}
+.icon_hard:hover {
+    background-color: rgb(214, 168, 168);
+}
+// .fa-twitter:before {
+//     content: "\f099";
+//     display: inline-block;
+//     margin-left: 10px;
+//     font-size: 20px;
+//     // margin: 8px;
+// }
+.fa-twitter:before {
+    content: "\f099";
+    display: inline-block;
+    margin: 11px;
+    font-size: 17px;
+}
+.fa-facebook-f:before {
+    // content: "\f39e";
+    // display: inline-block;
+    // // padding: 8px 11px;
+    // padding: 0 13px;
+    // font-size: 20px;
+    content: "f";
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 23px;
+    font-family: arial;
+    font-weight: 700;
+}
+
+.in {
+    font-stretch: semi-condensed;
+    font-size: 22px;
+    padding-top: 8px;
+}
+.g {
+    font-stretch: extra-condensed;
+    font-size: 22px;
+    padding-top: 7px;
+}
+.y {
+    font-size: 10px;
+    line-height: 9px;
+    padding: 9px;
+    font-stretch: condensed;
+}
+
+.copyrit {
+    text-align: center;
+    color: $color_gray;
+}
+
+
+
+
+
+@media (max-width: 425px) {
+    figure,  .product, .about, .dignity, .screenshots, .reviews section, .buy .buy_cards, article.buy_card, .footer .footer_colomns, .footer__form, img {
+    display: block; // как отменить влияние флекс боксов для телефонной версии
+    }
+    img {
+        max-width: 320px - 20px;
+    }
+    a, .icon {
+        display: inline;
+    }
+    $width_container: 100vw;
+    .container {
+        padding: 10px;
+    }
+    .footer .input {
+        min-width: 90vw;
+    }
+}
+
+
+
+
